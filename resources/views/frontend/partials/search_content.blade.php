@@ -8,16 +8,16 @@
         </ul>
     @endif
 </div>
-<div class="category">
-    @if (count($subsubcategories) > 0)
-        <div class="title">{{__('Category Suggestions')}}</div>
-        <ul>
-            @foreach ($subsubcategories as $key => $subsubcategory)
-                <li><a href="{{ route('products.subsubcategory', $subsubcategory->slug) }}">{{ __($subsubcategory->name) }}</a></li>
-            @endforeach
-        </ul>
-    @endif
-</div>
+{{--<div class="category">--}}
+{{--    @if (count($subsubcategories) > 0)--}}
+{{--        <div class="title">{{__('Category Suggestions')}}</div>--}}
+{{--        <ul>--}}
+{{--            @foreach ($subsubcategories as $key => $subsubcategory)--}}
+{{--                <li><a href="{{ route('products.subsubcategory', $subsubcategory->slug) }}">{{ __($subsubcategory->name) }}</a></li>--}}
+{{--            @endforeach--}}
+{{--        </ul>--}}
+{{--    @endif--}}
+{{--</div>--}}
 <div class="product">
     @if (count($products) > 0)
         <div class="title">{{__('Products')}}</div>
@@ -63,38 +63,38 @@
         </ul>
     @endif
 </div>
-@if(\App\BusinessSetting::where('type', 'vendor_system_activation')->first()->value == 1)
-    <div class="product">
-        @if (count($shops) > 0)
-            <div class="title">{{__('Shops')}}</div>
-            <ul>
-                @foreach ($shops as $key => $shop)
-                    <li>
-                        <a href="{{ route('shop.visit', $shop->slug) }}">
-                            <div class="d-flex search-product align-items-center">
-                                <div class="image" style="background-image:url('{{ asset($shop->logo) }}');">
-                                </div>
-                                <div class="w-100 overflow--hidden ">
-                                    <div class="product-name text-truncate heading-6 strong-600">
-                                        {{ $shop->name }}
+{{--@if(\App\BusinessSetting::where('type', 'vendor_system_activation')->first()->value == 1)--}}
+{{--    <div class="product">--}}
+{{--        @if (count($shops) > 0)--}}
+{{--            <div class="title">{{__('Shops')}}</div>--}}
+{{--            <ul>--}}
+{{--                @foreach ($shops as $key => $shop)--}}
+{{--                    <li>--}}
+{{--                        <a href="{{ route('shop.visit', $shop->slug) }}">--}}
+{{--                            <div class="d-flex search-product align-items-center">--}}
+{{--                                <div class="image" style="background-image:url('{{ asset($shop->logo) }}');">--}}
+{{--                                </div>--}}
+{{--                                <div class="w-100 overflow--hidden ">--}}
+{{--                                    <div class="product-name text-truncate heading-6 strong-600">--}}
+{{--                                        {{ $shop->name }}--}}
 
-                                        <div class="stock-box d-inline-block">
-                                            @if($shop->user->seller->verification_status == 1)
-                                                <span class="ml-2"><i class="fa fa-check-circle" style="color:green"></i></span>
-                                            @else
-                                                <span class="ml-2"><i class="fa fa-times-circle" style="color:red"></i></span>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="price-box alpha-6">
-                                        {{ $shop->address }}
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                @endforeach
-            </ul>
-        @endif
-    </div>
-@endif
+{{--                                        <div class="stock-box d-inline-block">--}}
+{{--                                            @if($shop->user->seller->verification_status == 1)--}}
+{{--                                                <span class="ml-2"><i class="fa fa-check-circle" style="color:green"></i></span>--}}
+{{--                                            @else--}}
+{{--                                                <span class="ml-2"><i class="fa fa-times-circle" style="color:red"></i></span>--}}
+{{--                                            @endif--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="price-box alpha-6">--}}
+{{--                                        {{ $shop->address }}--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
+{{--                @endforeach--}}
+{{--            </ul>--}}
+{{--        @endif--}}
+{{--    </div>--}}
+{{--@endif--}}

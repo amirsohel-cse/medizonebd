@@ -6,6 +6,11 @@
                     <h3 class="heading-5 strong-700 mb-0 float-lg-left">
                         <span class="mr-4">{{ $homeCategory->category->name }}</span>
                     </h3>
+                    <ul class="inline-links float-right">
+                        <li>
+                            <a href="{{ route('products.category', $homeCategory->category->slug) }}" class="active">View More</a>
+                        </li>
+                    </ul>
 
 {{--                    <ul class="inline-links float-lg-right nav mt-3 mb-2 m-lg-0">--}}
 {{--                        @foreach (json_decode($homeCategory->subsubcategories) as $key => $subsubcategory)--}}
@@ -21,6 +26,7 @@
 {{--                    @foreach (json_decode($homeCategory->subsubcategories) as $key => $subsubcategory)--}}
 {{--                        @if (\App\SubSubCategory::find($subsubcategory) != null)--}}
 {{--                        <div class="tab-pane fade">--}}
+
                             <div class="row gutters-5 sm-no-gutters">
                                 @foreach (\App\Product::where('published', 1)->where('category_id',$homeCategory->category_id)->limit(6)->get() as $key => $product)
                                     <div class="col-xl-2 col-lg-3 col-md-4 col-6">

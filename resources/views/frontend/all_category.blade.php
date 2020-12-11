@@ -52,40 +52,40 @@
             </div>
         </div>
     </div>
-    <div class="mt-4">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="bg-white">
-                        @foreach ($categories as $key => $category)
-                            @if(count($categories)>12 && $key == 11)
-                                <div class="sub-category-menu active" id="more">
-                                    <h3 class="category-name"><a href="{{ route('products.category', $category->slug) }}">{{ __($category->name) }}</a></h3>
-                                    <ul>
-                                        @foreach ($category->subcategories as $key => $subcategory)
-                                            @foreach ($subcategory->subsubcategories as $key => $subsubcategory)
-                                                <li><a href="{{ route('products.subsubcategory', $subsubcategory->slug) }}" >{{ __($subsubcategory->name) }}</a></li>
-                                            @endforeach
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @else
-                                <div class="sub-category-menu @php if($key < 12) echo 'active'; @endphp" id="{{ $key }}">
-                                    <h3 class="category-name"><a href="{{ route('products.category', $category->slug) }}" >{{ __($category->name) }}</a></h3>
-                                    <ul>
-                                        @foreach ($category->subcategories as $key => $subcategory)
-                                            @foreach ($subcategory->subsubcategories as $key => $subsubcategory)
-                                                <li><a href="{{ route('products.subsubcategory', $subsubcategory->slug) }}" >{{ __($subsubcategory->name) }}</a></li>
-                                            @endforeach
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
+{{--    <div class="mt-4">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col">--}}
+{{--                    <div class="bg-white">--}}
+{{--                        @foreach ($categories as $key => $category)--}}
+{{--                            @if(count($categories)>12 && $key == 11)--}}
+{{--                                <div class="sub-category-menu active" id="more">--}}
+{{--                                    <h3 class="category-name"><a href="{{ route('products.category', $category->slug) }}">{{ __($category->name) }}</a></h3>--}}
+{{--                                    <ul>--}}
+{{--                                        @foreach ($category->subcategories as $key => $subcategory)--}}
+{{--                                            @foreach ($subcategory->subsubcategories as $key => $subsubcategory)--}}
+{{--                                                <li><a href="{{ route('products.subsubcategory', $subsubcategory->slug) }}" >{{ __($subsubcategory->name) }}</a></li>--}}
+{{--                                            @endforeach--}}
+{{--                                        @endforeach--}}
+{{--                                    </ul>--}}
+{{--                                </div>--}}
+{{--                            @else--}}
+{{--                                <div class="sub-category-menu @php if($key < 12) echo 'active'; @endphp" id="{{ $key }}">--}}
+{{--                                    <h3 class="category-name"><a href="{{ route('products.category', $category->slug) }}" >{{ __($category->name) }}</a></h3>--}}
+{{--                                    <ul>--}}
+{{--                                        @foreach ($category->subcategories as $key => $subcategory)--}}
+{{--                                            @foreach ($subcategory->subsubcategories as $key => $subsubcategory)--}}
+{{--                                                <li><a href="{{ route('products.subsubcategory', $subsubcategory->slug) }}" >{{ __($subsubcategory->name) }}</a></li>--}}
+{{--                                            @endforeach--}}
+{{--                                        @endforeach--}}
+{{--                                    </ul>--}}
+{{--                                </div>--}}
+{{--                            @endif--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 </div>
 

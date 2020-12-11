@@ -247,11 +247,11 @@
                         <h3 class="heading-5 strong-700 mb-0 float-left">
                             <span class="mr-4">{{__('Top 10 Catogories')}}</span>
                         </h3>
-                        <ul class="float-right inline-links">
-                            <li>
-                                <a href="{{ route('categories.all') }}" class="active">{{__('View All Catogories')}}</a>
-                            </li>
-                        </ul>
+{{--                        <ul class="float-right inline-links">--}}
+{{--                            <li>--}}
+{{--                                <a href="{{ route('categories.all') }}" class="active">{{__('View All Catogories')}}</a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
                     </div>
                     <div class="row gutters-5">
                         @foreach (\App\Category::where('top', 1)->get() as $category)
@@ -278,11 +278,11 @@
                         <h3 class="heading-5 strong-700 mb-0 float-left">
                             <span class="mr-4">{{__('Top 10 Brands')}}</span>
                         </h3>
-                        <ul class="float-right inline-links">
-                            <li>
-                                <a href="{{ route('brands.all') }}" class="active">{{__('View All Brands')}}</a>
-                            </li>
-                        </ul>
+{{--                        <ul class="float-right inline-links">--}}
+{{--                            <li>--}}
+{{--                                <a href="{{ route('brands.all') }}" class="active">{{__('View All Brands')}}</a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
                     </div>
                     <div class="row">
                         @foreach (\App\Brand::where('top', 1)->get() as $brand)

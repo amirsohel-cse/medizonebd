@@ -341,11 +341,15 @@ class HomeController extends Controller
 
         $products = filter_products(Product::where('published', 1)->where('name', 'like', '%'.$request->search.'%')->orWhere('tags', 'like', '%'.$request->search.'%'))->get()->take(3);
 
+       // $subsubcategories = SubSubCategory::where('name', 'like', '%'.$request->search.'%')->get()->take(3);
 
-        $shops = Shop::whereIn('user_id', verified_sellers_id())->where('name', 'like', '%'.$request->search.'%')->get()->take(3);
+       // $shops = Shop::whereIn('user_id', verified_sellers_id())->where('name', 'like', '%'.$request->search.'%')->get()->take(3);
 
+        if(sizeof($keywords)>0 | sizeof($products)>0 ){
+            return view('frontend.partials.search_content', compact('products', 'keywords'));
+        }
 
-        return '0';
+            return '0';
     }
 
     public function search(Request $request)

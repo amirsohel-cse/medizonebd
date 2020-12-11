@@ -266,11 +266,13 @@
     function search(){
         var search = $('#search').val();
         if(search.length > 0){
+           console.log(search.length);
             $('body').addClass("typed-search-box-shown");
 
             $('.typed-search-box').removeClass('d-none');
             $('.search-preloader').removeClass('d-none');
             $.post('{{ route('search.ajax') }}', { _token: '{{ @csrf_token() }}', search:search}, function(data){
+                console.log(data);
                 if(data == '0'){
                     // $('.typed-search-box').addClass('d-none');
                     $('#search-content').html(null);
